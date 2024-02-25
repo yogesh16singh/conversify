@@ -36,7 +36,7 @@ const Page: FC = () => {
             type='button'
             className='max-w-sm mx-auto w-full'
             onClick={loginWithGoogle}>
-            {isLoading ? null : (
+            {isLoading ? <></> : (
               <svg
                 className='mr-2 h-4 w-4'
                 aria-hidden='true'
