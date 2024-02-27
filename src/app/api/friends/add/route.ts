@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { toPusherKey } from "@/lib/utils";
 import { addFriendValidator } from "@/lib/validations/add-friend";
 import { getServerSession } from "next-auth";
+import Email from "next-auth/providers/email";
 import { z } from "zod";
 
 export async function POST(req: Request) {
@@ -12,7 +13,7 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const { email: emailToAdd } = addFriendValidator.parse(body.email);
-
+    console.log("email", emailToAdd);
     const idToAdd = (await fetchRedis(
       "get",
       `user:email:${emailToAdd}`,
