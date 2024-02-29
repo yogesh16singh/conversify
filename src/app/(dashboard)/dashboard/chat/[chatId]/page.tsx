@@ -6,6 +6,7 @@ import { messageArrayValidator } from '@/lib/validations/message'
 import { getServerSession } from 'next-auth'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import {Message} from '@/lib/validations/message'
 
 // The following generateMetadata functiion was written after the video and is purely optional
 export async function generateMetadata({
